@@ -1,7 +1,7 @@
-# BigData
-# Hadoop MapReduce Record Count
+ 
+# Hadoop MapReduce Using Temperature Dataset 
 
-This repository demonstrates how to compile and run a Hadoop MapReduce job to count records in a CSV file.
+This repository demonstrates how to compile and run a Hadoop MapReduce job to find the maximum temperature by year from a CSV file.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ mkdir folder
 ```
 ### 2.Compile the Java Code
 ```
-javac -classpath $(hadoop classpath) -d folder RecordCountMapper.java RecordCountReducer.java RecordCount.java
+javac -classpath $(hadoop classpath) -d folder M1.java R1.java Driver.java
 ```
  
 ### 3.Package into a JAR File
@@ -49,13 +49,33 @@ hdfs dfs -put dataset124.csv /input/data.csv
 
  
  ```
-yarn jar recordcount.jar (<packagename>).RecordCount /input /output
+yarn jar recordcount.jar (<packagename>).Driver /input /output2
  ``` 
 
 ### 7.Display the contents of the output file:
 
  
  ```
-hdfs dfs -ls /output
-hdfs dfs -cat /output/part-r-00000
+hdfs dfs -ls /output2
+hdfs dfs -cat /output2/part-r-00000
+ ```
+
+### 8.Checking Job Status
+check the status of a job using the Hadoop command-line  
+
+
+ 
+ ```
+hadoop application -status <applicationId>
+hadoop job -list
+ ```
+
+### 9.Terminating the Job :
+To terminate a running job, use the following command:
+ 
+
+
+ 
+ ```
+hadoop job -kill $jobId
  ```

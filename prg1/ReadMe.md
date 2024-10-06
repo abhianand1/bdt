@@ -1,5 +1,5 @@
-# BigData
-# Hadoop MapReduce Record Count
+ 
+# 1. Hadoop MapReduce Record Count
 
 This repository demonstrates how to compile and run a Hadoop MapReduce job to count records in a CSV file.
 
